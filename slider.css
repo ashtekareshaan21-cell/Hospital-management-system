@@ -1,0 +1,48 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+h1, h2, p, div ,button .animate {
+    animation: fadeIn 0.8s ease-out both;
+    animation-delay: calc(var(--animation-order, 0) * 0.1s);
+}
+.container{
+    width: 100%;
+    height: 70vh;
+    padding: 20px;
+    margin: 0;
+    overflow: hidden;
+    margin-top: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #007C92;
+}
+.slider-wrapper{
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    height: 100%;
+}
+.slider{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: none;
+}
+.slider img{
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}

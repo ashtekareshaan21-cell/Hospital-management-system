@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCCOE HOSPITAL MANAGEMENT - Patient Portal</title>
+    <link rel="stylesheet" href="patient.css">
+    <script src="backend.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div class="logo"><a href="index.html"></a></div>
+            <p>PCCOE Hospital Management System - Patient Portal</p>
+            <div class="links">
+                <ul>
+                    <li><a href="index.html" id="home">Home</a></li>
+                    <li><a href="#appointments" id="appointments-link">My Requests</a></li>
+                </ul>
+            </div>
+            <div><button class="nav-button" id="logout-btn"><h2>Logout</h2></button></div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="patient-container">
+            <!-- Welcome Section -->
+            <div class="welcome-section">
+                <h1>Welcome, <span id="patientName"></span></h1>
+                <p>Request and manage your medical appointments</p>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="tab-buttons">
+                <button class="tab-btn active" data-tab="request">Request Appointment</button>
+                <button class="tab-btn" data-tab="requests">My Requests</button>
+                <button class="tab-btn" data-tab="scheduled">Scheduled Appointments</button>
+            </div>
+
+            <!-- Request Appointment Tab -->
+            <div id="request" class="tab-content active">
+                <h2>Request an Appointment</h2>
+                <form id="appointmentForm" class="appointment-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="doctor">Select Doctor *</label>
+                            <select id="doctor" name="doctor" required>
+                                <option value="">Choose a Doctor</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="specialization">Specialization</label>
+                            <input type="text" id="specialization" name="specialization" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="reason">Reason for Visit *</label>
+                            <textarea id="reason" name="reason" rows="4" placeholder="Describe your symptoms or reason for visit" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Preferred Dates (Select at least 1) *</label>
+                        <div id="preferredDates" class="dates-container"></div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Preferred Times (Select at least 1) *</label>
+                        <div id="preferredTimes" class="times-container">
+                            <label><input type="checkbox" name="time" value="09:00"> 9:00 AM</label>
+                            <label><input type="checkbox" name="time" value="10:00"> 10:00 AM</label>
+                            <label><input type="checkbox" name="time" value="11:00"> 11:00 AM</label>
+                            <label><input type="checkbox" name="time" value="14:00"> 2:00 PM</label>
+                            <label><input type="checkbox" name="time" value="15:00"> 3:00 PM</label>
+                            <label><input type="checkbox" name="time" value="16:00"> 4:00 PM</label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="notes">Additional Notes</label>
+                            <textarea id="notes" name="notes" rows="3" placeholder="Any additional information or medical history relevant to this visit"></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Submit Request</button>
+                </form>
+                <div id="bookMessage" class="message"></div>
+            </div>
+
+            <!-- My Requests Tab -->
+            <div id="requests" class="tab-content">
+                <h2>My Appointment Requests</h2>
+                <div id="requestsContainer" class="requests-container">
+                    <div class="no-requests">No requests submitted yet</div>
+                </div>
+            </div>
+
+            <!-- Scheduled Appointments Tab -->
+            <div id="scheduled" class="tab-content">
+                <h2>Scheduled Appointments</h2>
+                <div id="scheduledContainer" class="appointments-container">
+                    <div class="no-appointments">No scheduled appointments</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Request Details Modal -->
+    <div id="requestModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Request Details</h2>
+            <div id="requestDetails" class="details-container"></div>
+            <div class="modal-actions">
+                <button id="cancelRequestBtn" class="btn-cancel">Cancel Request</button>
+                <button class="modal-close">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Appointment Details Modal -->
+    <div id="appointmentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Appointment Details</h2>
+            <div id="appointmentDetails" class="details-container"></div>
+            <div class="modal-actions">
+                <button id="cancelAppointmentBtn" class="btn-cancel">Cancel Appointment</button>
+                <button class="modal-close">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="patient.js"></script>
+</body>
+</html>
+            <div id="appointmentDetails" class="appointment-details">
+                <!-- Populated by JavaScript -->
+            </div>
+            <div class="modal-actions">
+                <button id="cancelAppointmentBtn" class="btn-cancel">Cancel Appointment</button>
+                <button id="closeModalBtn" class="btn-close">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="patient.js"></script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <h3 class="footer-title">PCCOE Hospital Management System</h3>
+                <p class="footer-guide">Guided by: <span>Pratik Jagdale Sir</span></p>
+                <div class="team-members">
+                    <div class="team-member">Abhass Shegaonkar</div>
+                    <div class="team-member">Rohit Shelke</div>
+                    <div class="team-member">Eshaan Ashtekar</div>
+                    <div class="team-member">Denesh Bhan</div>
+                </div>
+                <p class="footer-copyright">&copy; 2025 PCCOE Hospital Management System. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

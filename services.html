@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OUR SERVICES</title>
+    <link rel="stylesheet" href="services.css"></link>
+</head>
+<body>
+    <!-- Service Modal -->
+    <div id="serviceModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="serviceTitle"></h2>
+            <p id="serviceDescription"></p>
+        </div>
+    </div>
+
+    <!-- Doctor Modal -->
+    <div id="doctorModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="doctorImage" src="" alt="Doctor">
+            <h2 id="doctorName"></h2>
+            <p id="doctorSpecialty"></p>
+            <p id="doctorBio"></p>
+        </div>
+    </div>
+
+    <header>
+        <nav class="nav">
+            <div class="logo"><a href="index.html"></a></div>
+            <p>PCCOE Hospital Management System</p>
+            <div class="links">
+                <ul>
+                    <li><a href="index.html" id="home">Home</a></li>
+                    <li><a href="" id="services">Our Services</a></li>
+                    <li><a href="contact.html" id="contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="button"><a href="login.html"><button class="nav-button"><h2>Login</h2></button></a></div>
+        </nav>
+    </header>
+<br>
+<br> 
+<div class="coe">
+    <h1>
+    <b>Centres of Excellence</b>
+    <hr>
+</h1>
+<br>
+<h2>
+     Our Centres of Excellence bring together multidisciplinary teams to deliver precise diagnosis, advanced treatments, and superior outcomes across a wide spectrum of medical specialties.
+     <br>
+</h2>
+<br>
+<br>
+<div class="grid1">
+<div class="item"><button class="btn-service" data-service="Pediatrics" data-description="Pediatrics is a medical specialty dedicated to the care of infants, children, and adolescents. Our pediatric team provides comprehensive healthcare services including preventive care, treatment of acute and chronic conditions, and developmental assessment."><b><h3>Pediatrics</h3></b></button></div>
+<div class="item"><button class="btn-service" data-service="Pulmonology" data-description="Pulmonology specializes in the diagnosis and treatment of lung and respiratory system disorders. We offer advanced diagnostics, treatment plans for asthma, COPD, and other respiratory conditions."><b><h3>Pulmonology</h3></b></button></div>
+<div class="item"><button class="btn-service" data-service="Vascular Surgery" data-description="Vascular Surgery involves the surgical treatment of diseases affecting the arteries, veins, and lymph vessels. Our specialists provide comprehensive care for vascular conditions."><b><h3>Vascular Surgery</h3></b></button></div>
+<div class="item"><button class="btn-service" data-service="Emergency Medicine" data-description="Emergency Medicine provides urgent care for acute illnesses and injuries. Our emergency team is equipped to handle critical situations with advanced technology and expertise."><b><h3>Emergengy Medicine</h3></b></button></div>
+<div class="item"><button class="btn-service" data-service="Bariatric Surgery" data-description="Bariatric Surgery offers surgical solutions for weight management and obesity-related conditions. Our experienced surgeons provide comprehensive pre- and post-operative care."><b><h3>Bariatric Surgery</h3></b></button></div>
+<div class="item"><button class="btn-service" data-service="Gynecology" data-description="Gynecology focuses on women's reproductive health, including pregnancy care, family planning, and treatment of gynecological conditions."><b><h3>Gynacology</h3></b></button></div>
+<div class="item"><button class="btn-service" data-service="Cosmetology" data-description="Cosmetology provides aesthetic and cosmetic procedures to enhance physical appearance while maintaining natural results and safety standards."><b><h3>Cosmitology</h3></b></button></div>
+<div class="item"><button class="btn-service" data-service="Radiology" data-description="Radiology uses advanced imaging techniques including X-ray, CT, MRI, and ultrasound for accurate diagnosis and image-guided interventions."><b><h3>Radiology</h3></b></button></div>
+<div class="item"><button class="btn-service" data-service="Colorectal Surgery" data-description="Colorectal Surgery specializes in conditions of the colon, rectum, and anus. Our surgeons provide both minimally invasive and traditional surgical approaches."><b><h3>Colorectal Surgery</h3></b></button></div>
+<div class="item"><button class="btn-service" data-service="General Surgery" data-description="General Surgery handles a wide range of surgical procedures including emergency surgery, gastrointestinal surgery, and other general surgical needs."><b><h3>General Surgery</h3></b></button></div>
+<div class="item"><button class="btn-service" data-service="Dentistry" data-description="Dentistry provides comprehensive oral care including preventive care, restorative procedures, and cosmetic dentistry solutions."><b><h3>Dentistry</h3></b></button></div>
+<div class="item"><button class="btn-service" data-service="Nephrology" data-description="Nephrology specializes in kidney diseases and disorders. Our nephrologists provide comprehensive management of chronic kidney disease and dialysis services."><b><h3>Nephrology</h3></b></button></div>
+<div class="item"><button class="btn-service" data-service="Dermatology" data-description="Dermatology focuses on skin, hair, and nail disorders. We offer both medical and cosmetic dermatology services for all skin types."><b><h3>Dermatology</h3></b></button></div>
+<div class="item"><button class="btn-service" data-service="Endocrinology" data-description="Endocrinology specializes in hormone disorders and metabolic diseases including diabetes, thyroid conditions, and hormonal imbalances."><b><h3>Endocrinolgy</h3></b></button></div>
+</div>
+</div>
+<br>
+<br>
+<div class="doctors">
+<h1>
+    <b>Our Doctors</b>
+    <hr>
+</h1>
+<br>
+<h2>
+    <b>
+        Our medical team combines deep expertise across numerous specialties with a genuinely patient-centered approach. We believe in clear communication and collaboration to create personalized treatment plans tailored to your unique needs.
+    </b>
+<br>
+<div class="grid2">
+<div class="special"><button class="btn-doctor" data-name="Dr. Ramesh" data-specialty="Biologist" data-image="doctor logo/biologist.webp" data-bio="Dr. Ramesh is a highly qualified biologist with extensive experience in medical research and diagnostics. He specializes in laboratory analysis and biological sciences."><img src="doctor logo/biologist.webp" height="80"><b><h3>Dr.Ramesh<br>Biologist</h3></b></button></div>
+<div class="special"><button class="btn-doctor" data-name="Dr. Pankaj" data-specialty="Cardiologist" data-image="doctor logo/cardiologist logo.avif" data-bio="Dr. Pankaj is a renowned cardiologist with over 15 years of experience in treating heart diseases and cardiovascular conditions. He specializes in interventional cardiology."><img src="doctor logo/cardiologist logo.avif" height="80"><b><h3>Dr.Pankaj<br>Cardiologist</h3></b></button></div>
+<div class="special"><button class="btn-doctor" data-name="Dr. Pratik" data-specialty="Cosmetics" data-image="doctor logo/cosmetic logo.webp" data-bio="Dr. Pratik is an expert in cosmetic and aesthetic procedures. He is dedicated to enhancing natural beauty with advanced techniques and minimal invasiveness."><img src="doctor logo/cosmetic logo.webp" height="80"><b><h3>Dr.Pratik<br>Cosmetics</h3></b></button></div>
+<div class="special"><button class="btn-doctor" data-name="Dr. Sanket" data-specialty="Dentist" data-image="doctor logo/dentist.webp" data-bio="Dr. Sanket is a skilled dentist with expertise in general dentistry, cosmetic dentistry, and oral surgery. He ensures patient comfort with modern dental practices."><img src="doctor logo/dentist.webp" height="80"><b><h3>Dr.Sanket<br>Dentist</h3></b></button></div>
+<div class="special"><button class="btn-doctor" data-name="Dr. Aporva" data-specialty="CTVS" data-image="doctor logo/ctvs.webp" data-bio="Dr. Aporva is a cardiothoracic and vascular surgeon with extensive experience in complex cardiac and thoracic surgeries with excellent outcomes."><img src="doctor logo/ctvs.webp" height="80"><b><h3>Dr.Aporva<br>CTVS</h3></b></button></div>
+<div class="special"><button class="btn-doctor" data-name="Dr. Om" data-specialty="Emergency Medicine" data-image="doctor logo/medicine care.webp" data-bio="Dr. Om is an experienced emergency medicine specialist trained to handle critical situations and provide immediate life-saving interventions."><img src="doctor logo/medicine care.webp" height="80"><b><h3>Dr.Om<br>Emergency Medicine</h3></b></button></div>
+<div class="special"><button class="btn-doctor" data-name="Dr. Tanay" data-specialty="Critical Care Specialists" data-image="doctor logo/critical care.webp" data-bio="Dr. Tanay specializes in critical care medicine, managing patients in ICU settings with expertise in complex medical conditions and advanced supportive care."><img src="doctor logo/critical care.webp" height="80"><b><h3>Dr.Tanay<br>Critical Care Specialists</h3></b></button></div>
+<div class="special"><button class="btn-doctor" data-name="Dr. Vedika" data-specialty="Gynecology" data-image="doctor logo/gyn.webp" data-bio="Dr. Vedika is a compassionate gynecologist specializing in women's health, obstetrics, and reproductive medicine. She provides comprehensive care throughout all life stages."><img src="doctor logo/gyn.webp" height="80"><b><h3>Dr.Vedika<br>Gynecology Doctors</h3></b></button></div>
+<div class="special"><button class="btn-doctor" data-name="Dr. Yash" data-specialty="General Surgeons" data-image="doctor logo/sur.webp" data-bio="Dr. Yash is a skilled general surgeon with expertise in laparoscopic procedures and advanced surgical techniques for various abdominal and general conditions."><img src="doctor logo/sur.webp" height="80"><b><h3>Dr.Yash<br>General Surgeons</h3></b></button></div>
+<div class="special"><button class="btn-doctor" data-name="Dr. Metkar" data-specialty="Gynecology" data-image="doctor logo/gyn.webp" data-bio="Dr. Metkar brings extensive experience in gynecological care, family planning, and maternal health services with a patient-centric approach."><img src="doctor logo/gyn.webp" height="80"><b><h3>Dr.Metkar<br>Gynecology Doctors</h3></b></button></div>
+<div class="special"><button class="btn-doctor" data-name="Dr. Patil" data-specialty="Emergency Medicine" data-image="doctor logo/medical emg.jfif" data-bio="Dr. Patil is an emergency medicine expert with rapid response capabilities and expertise in trauma management and emergency care protocols."><img src="doctor logo/medical emg.jfif" height="80"><b><h3>Dr.Patil<br>Emergency Meds</h3></b></button></div>
+<div class="special"><button class="btn-doctor" data-name="Dr. Sahil" data-specialty="Endocrinologist" data-image="doctor logo/endo.webp" data-bio="Dr. Sahil specializes in endocrinology and metabolic disorders, with expertise in diabetes management, thyroid diseases, and hormonal treatment."><img src="doctor logo/endo.webp" height="80"><b><h3>Dr.Sahil<br>Endocrinologist</h3></b></button></div>
+<div class="special"><button class="btn-doctor" data-name="Dr. Gavrav" data-specialty="ENT Specialist" data-image="doctor logo/ent.webp" data-bio="Dr. Gavrav is an ENT specialist with expertise in treating ear, nose, and throat disorders, including both medical and surgical interventions."><img src="doctor logo/ent.webp" height="80"><b><h3>Dr.Gavrav<br>ENT Specialist</h3></b></button></div>
+<div class="special"><button class="btn-doctor" data-name="Dr. Atole" data-specialty="Kidney Doctor" data-image="doctor logo/kidney.webp" data-bio="Dr. Atole specializes in nephrology with comprehensive expertise in kidney disease management, dialysis, and renal transplantation."><img src="doctor logo/kidney.webp" height="80"><b><h3>Dr.Atole<br>Kidney Doctor</h3></b></button></div>
+<div class="special"><button class="btn-doctor" data-name="Dr. Saurabh" data-specialty="Psychologist" data-image="doctor logo/kidney.webp" data-bio="Dr. Saurabh is a clinical psychologist specializing in mental health conditions, providing therapy and psychological support with evidence-based approaches."><img src="doctor logo/kidney.webp" height="80"><b><h3>Dr.Saurabh<br>Psychologist</h3></b></button></div>
+<br>
+</div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <h3 class="footer-title">PCCOE Hospital Management System</h3>
+            <p class="footer-guide">Guided by: <span>Pratik Jagdale Sir</span></p>
+            <div class="team-members">
+                <div class="team-member">Abhass Shegaonkar</div>
+                <div class="team-member">Rohit Shelke</div>
+                <div class="team-member">Eshaan Ashtekar</div>
+                <div class="team-member">Denesh Bhan</div>
+            </div>
+            <p class="footer-copyright">&copy; 2025 PCCOE Hospital Management System. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
+<script src="services.js"></script>

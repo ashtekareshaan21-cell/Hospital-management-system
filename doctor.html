@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCCOE HOSPITAL MANAGEMENT - Doctor Portal</title>
+    <link rel="stylesheet" href="doctor.css">
+    <script src="backend.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div class="logo"><a href="index.html"></a></div>
+            <p>PCCOE Hospital Management System - Doctor Portal</p>
+            <div class="links">
+                <ul>
+                    <li><a href="index.html" id="home">Home</a></li>
+                    <li><a href="#requests" id="requests-link">Appointment Requests</a></li>
+                </ul>
+            </div>
+            <div><button class="nav-button" id="logout-btn"><h2>Logout</h2></button></div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="doctor-container">
+            <div class="welcome-section">
+                <h1>Welcome, <span id="doctorName"></span></h1>
+                <p class="specialization" id="specialization"></p>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="tab-buttons">
+                <button class="tab-btn active" data-tab="availability">My Availability</button>
+                <button class="tab-btn" data-tab="requests">Appointment Requests</button>
+                <button class="tab-btn" data-tab="schedule">My Schedule</button>
+                <button class="tab-btn" data-tab="fetch-patient">Fetch Patient by ID</button>
+                <button class="tab-btn" data-tab="patients">Patient Records</button>
+            </div>
+
+            <!-- Availability Tab -->
+            <div id="availability" class="tab-content active">
+                <h2>Manage Your Availability</h2>
+                <div class="availability-form-section">
+                    <h3>Add Available Time Slot</h3>
+                    <form id="availabilityForm" class="availability-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="availDate">Date *</label>
+                                <input type="date" id="availDate" name="availDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="startTime">Start Time *</label>
+                                <input type="time" id="startTime" name="startTime" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="endTime">End Time *</label>
+                                <input type="time" id="endTime" name="endTime" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="slotsPerHour">Appointments per Hour *</label>
+                                <select id="slotsPerHour" name="slotsPerHour" required>
+                                    <option value="">Select</option>
+                                    <option value="1">1 (60 min)</option>
+                                    <option value="2">2 (30 min)</option>
+                                    <option value="4">4 (15 min)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-submit">Add Availability</button>
+                    </form>
+                    <div id="availMessage" class="message"></div>
+                </div>
+
+                <div class="availability-list-section">
+                    <h3>Your Available Slots</h3>
+                    <div id="availabilitySlots" class="slots-container">
+                        <div class="no-slots">No available slots added yet</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Appointment Requests Tab -->
+            <div id="requests" class="tab-content">
+                <h2>Appointment Requests</h2>
+                <div class="requests-filter">
+                    <button class="filter-btn active" data-filter="all">All Requests</button>
+                    <button class="filter-btn" data-filter="pending">Pending</button>
+                    <button class="filter-btn" data-filter="approved">Approved</button>
+                </div>
+                <div id="appointmentRequests" class="requests-container">
+                    <div class="no-requests">No appointment requests yet</div>
+                </div>
+            </div>
+
+            <!-- Schedule Tab -->
+            <div id="schedule" class="tab-content">
+                <h2>My Approved Schedule</h2>
+                <div id="appointmentSchedule" class="schedule-container">
+                    <div class="no-appointments">No scheduled appointments yet</div>
+                </div>
+            </div>
+
+            <!-- Fetch Patient by ID Tab -->
+            <div id="fetch-patient" class="tab-content">
+                <h2>Fetch Patient Information by ID</h2>
+                <div class="search-section">
+                    <div class="search-box">
+                        <div class="search-input-group">
+                            <input type="text" id="patientIdInput" placeholder="Enter Patient ID (e.g., PAT1234567890123)...">
+                            <button id="fetchPatientBtn" class="btn-search">Fetch Patient</button>
+                        </div>
+                    </div>
+                    <div id="fetchMessage" class="message"></div>
+                </div>
+
+                <div class="results-section">
+                    <div id="fetchPatientResult" class="patient-detail-display">
+                        <div class="no-results">Enter a patient ID to fetch patient information.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Patient Records Tab -->
+            <div id="patients" class="tab-content">
+                <h2>Search Patient Records</h2>
+                <div class="search-section">
+                    <div class="search-box">
+                        <div class="search-input-group">
+                            <input type="text" id="patientSearch" placeholder="Enter patient name or ID...">
+                            <button id="searchPatientBtn" class="btn-search">Search</button>
+                        </div>
+                        <div class="filter-options">
+                            <label>
+                                <input type="checkbox" id="showAllCheckbox"> Show All Patients
+                            </label>
+                        </div>
+                    </div>
+                    <div id="searchMessage" class="message"></div>
+                </div>
+
+                <div class="results-section">
+                    <div class="patients-grid" id="patientsGrid">
+                        <div class="no-results">No patients found. Use search to find patient records.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Request Details Modal -->
+    <div id="requestModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Appointment Request Details</h2>
+            <div id="requestDetails" class="request-details">
+                <!-- Populated by JavaScript -->
+            </div>
+            <div class="modal-actions" id="requestModalActions">
+                <button id="approveRequestBtn" class="btn-approve">Approve Request</button>
+                <button id="rejectRequestBtn" class="btn-reject">Reject Request</button>
+                <button class="modal-close">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Approval Form Modal -->
+    <div id="approvalModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Confirm Appointment Details</h2>
+            <div id="approvalForm" class="approval-form">
+                <!-- Populated by JavaScript -->
+            </div>
+            <div class="modal-actions">
+                <button id="confirmApprovalBtn" class="btn-approve">Confirm Appointment</button>
+                <button class="modal-close">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Patient Details Modal -->
+    <div id="patientModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Patient Medical Record</h2>
+            <div id="patientDetails" class="patient-details">
+                <!-- Populated by JavaScript -->
+            </div>
+            <div class="modal-actions">
+                <button class="modal-close">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="doctor.js"></script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <h3 class="footer-title">PCCOE Hospital Management System</h3>
+                <p class="footer-guide">Guided by: <span>Pratik Jagdale Sir</span></p>
+                <div class="team-members">
+                    <div class="team-member">Abhass Shegaonkar</div>
+                    <div class="team-member">Rohit Shelke</div>
+                    <div class="team-member">Eshaan Ashtekar</div>
+                    <div class="team-member">Denesh Bhan</div>
+                </div>
+                <p class="footer-copyright">&copy; 2025 PCCOE Hospital Management System. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
